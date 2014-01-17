@@ -40,6 +40,10 @@
  *
  * Tested with Backbone v0.9.2 and 1.0.0.
  */
+ /**
+  * 
+ * Removed .bind(this) from $.ajax and added document.getElementById() to speed it up a little more.
+ */
 (function(){
     "use strict";
 
