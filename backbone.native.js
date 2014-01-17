@@ -229,7 +229,11 @@
                 div.removeChild(div.firstChild);
                 this.length = 1;
             } else {
-                element = context.querySelector(element);
+                if(element[0] === '#'){
+                    element = document.getElementById(element);
+                }else{
+                    element = context.querySelector(element);
+                }
 
                 // Length must be 0 if no elements found.
                 if (element !== null){
@@ -439,7 +443,7 @@
                 // This signature is inconsistent with v0.9.2, but is correct for 1.0.0.
                 if (options.error) options.error(xhr);
             }
-        }.bind(this);
+        };
 
         xhr.onerror = xhr.onabort = function(){
             if (options.error) options.error(xhr);
