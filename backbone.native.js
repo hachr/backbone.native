@@ -234,7 +234,7 @@
                 this.length = 1;
             } else {
                 if(element[0] === '#'){
-                    element = document.getElementById(element);
+                    element = document.getElementById(element.slice(1));
                 }else{
                     element = context.querySelector(element);
                 }
